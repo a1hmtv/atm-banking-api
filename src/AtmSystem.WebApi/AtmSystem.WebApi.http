@@ -1,0 +1,40 @@
+@host = http://localhost:5071
+@adminPassword = REPLACE_WITH_LOCAL_PASSWORD
+@adminKey = REPLACE_WITH_ADMIN_SESSION_KEY
+@userKey = REPLACE_WITH_USER_SESSION_KEY
+
+### 1. Create admin session (copy sessionKey into adminKey)
+POST {{host}}/sessions/admin
+Content-Type: application/json
+
+{"systemPassword":"{{adminPassword}}"}
+
+### 2. Create demo account
+POST {{host}}/accounts/create
+Content-Type: application/json
+
+{"adminSessionKey":"{{adminKey}}","accountNumber":"DEMO-001","pin":"1234","initialBalance":1000}
+
+### 3. Create user session (copy sessionKey into userKey)
+POST {{host}}/sessions/user
+Content-Type: application/json
+
+{"accountNumber":"DEMO-001","pin":"1234"}
+
+### 4. Deposit
+POST {{host}}/accounts/deposit
+Content-Type: application/json
+
+{"sessionKey":"{{userKey}}","amount":250}
+
+### 5. Withdraw
+POST {{host}}/accounts/withdraw
+Content-Type: application/json
+
+{"sessionKey":"{{userKey}}","amount":100}
+
+### 6. Balance (expected 1150 after the operations above)
+GET {{host}}/accounts/balance?sessionKey={{userKey}}
+
+### 7. History
+GET {{host}}/accounts/history?sessionKey={{userKey}}

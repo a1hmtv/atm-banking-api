@@ -1,0 +1,19 @@
+# .NET build and test artifacts
+**/bin/
+**/obj/
+**/TestResults/
+*.user
+*.suo
+*.nupkg
+coverage*.xml
+# IDE and OS files
+.idea/
+.vs/
+.DS_Store
+__MACOSX/
+# Local configuration
+.env
+.env.*
+
+*.local.json
+appsettings.Local.json

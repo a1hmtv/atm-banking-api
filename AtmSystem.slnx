@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AtmSystem.Core/AtmSystem.Core.csproj" />
+    <Project Path="src/AtmSystem.Application/AtmSystem.Application.csproj" />
+    <Project Path="src/AtmSystem.Infrastructure/AtmSystem.Infrastructure.csproj" />
+    <Project Path="src/AtmSystem.WebApi/AtmSystem.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AtmSystem.Tests/AtmSystem.Tests.csproj" />
+  </Folder>
+</Solution>

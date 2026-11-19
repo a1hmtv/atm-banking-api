@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <RootNamespace>AtmSystem.WebApi</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../AtmSystem.Application/AtmSystem.Application.csproj" />
+    <ProjectReference Include="../AtmSystem.Infrastructure/AtmSystem.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
